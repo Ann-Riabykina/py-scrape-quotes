@@ -59,6 +59,8 @@ def main(output_csv_path: str) -> None:
     ) as f:
         writer = csv.writer(f)
 
+        writer.writerow(["text", "author", "tags"])
+
         url: str | None = BASE_URL
         while url:
             soup = _get_soup(session, url)
